@@ -17,7 +17,7 @@ if (!AssessmentDate >= DateTime.Today.AddDays(-10)) throw new ValidationExceptio
 Not very intuitive!
 
 What if you could write?
-```
+```C#
 if (AssessmentDate.IsMoreThan(10).Days.Ago) throw new ValidationException();
 ```
 #How do I get started?

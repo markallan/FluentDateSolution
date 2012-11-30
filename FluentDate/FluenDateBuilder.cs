@@ -28,21 +28,68 @@ namespace FluentDate
             _expressionType = expressionType;
         }
         #region Public Methods
-        
 
-        public IDateQantifier Days {
-            get      {
-                _dateTimeUnitType = DateTimeUnitType.Day;
-                return this;               
-            }            
-        }
+        #region IDateQuantifier implementation
 
-        public IDateQantifier Weeks {
-            get {
-                _dateTimeUnitType = DateTimeUnitType.Week;
-                return this;
+            public IDateQantifier Seconds
+            {
+                get
+                {
+                    _dateTimeUnitType = DateTimeUnitType.Second;
+                    return this;
+                }
             }
-        }
+            public IDateQantifier Minutes
+            {
+                get
+                {
+                    _dateTimeUnitType = DateTimeUnitType.Minute;
+                    return this;
+                }
+            }
+            public IDateQantifier Hours
+            {
+                get
+                {
+                    _dateTimeUnitType = DateTimeUnitType.Hour;
+                    return this;
+                }
+            }
+            public IDateQantifier Days
+            {
+                get
+                {
+                    _dateTimeUnitType = DateTimeUnitType.Day;
+                    return this;
+                }
+            }
+            public IDateQantifier Weeks
+            {
+                get
+                {
+                    _dateTimeUnitType = DateTimeUnitType.Week;
+                    return this;
+                }
+            }
+            public IDateQantifier Months
+            {
+                get
+                {
+                    _dateTimeUnitType = DateTimeUnitType.Month;
+                    return this;
+                }
+            }
+            public IDateQantifier Years
+            {
+                get
+                {
+                    _dateTimeUnitType = DateTimeUnitType.Year;
+                    return this;
+                }
+            }
+
+        #endregion
+        
         #region IDateQuantifier Implementatin
 
             public bool Before(DateTime targetDateTime)
