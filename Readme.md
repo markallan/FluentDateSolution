@@ -9,12 +9,17 @@ Let's say you are trying to validate the following business rule.
 How might we test for a validation without using FluentDate?
 
 ```C#
-if (AssessmentDate.AddDays(10) < DateTime.Today))
-if (AssessmentDate < DateTime.Today.AddDays(-10))
-if (!AssessmentDate.AddDays(10) >= DateTime.Today))
-if (!AssessmentDate >= DateTime.Today.AddDays(-10))
+if (AssessmentDate.AddDays(10) < DateTime.Today)) throw new ValidationException();
+if (AssessmentDate < DateTime.Today.AddDays(-10)) throw new ValidationException();
+if (!AssessmentDate.AddDays(10) >= DateTime.Today)) throw new ValidationException();
+if (!AssessmentDate >= DateTime.Today.AddDays(-10)) throw new ValidationException();
 ```
+Not very intuitive!
 
+What if you could write
+```
+if (AssessmentDate.IsMoreThan(10).Days.Ago) throw new ValidationException();
+```
 #How do I get started?
 
 
