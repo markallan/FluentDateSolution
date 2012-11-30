@@ -1,1 +1,10 @@
-This is my readme.
+What is FluenDate?
+==================
+
+
+How do I get started?
+=====================
+
+
+Where do I get it?
+==================
