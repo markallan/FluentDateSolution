@@ -1,6 +1,6 @@
-#What is FluenDate?
+#What is FluentDate?
 
-FlueDate is a nano size library that is meant to make date comparisons more readable in a business domain.
+FluentDate is a nano size library that is meant to make date comparisons more readable in a business domain.
 
 ##Why would I want to use it?
 Let's say you are trying to validate the following business rule.
@@ -16,7 +16,7 @@ if (!AssessmentDate >= DateTime.Today.AddDays(-10)) throw new ValidationExceptio
 ```
 Not very intuitive!
 
-What if you could write
+What if you could write?
 ```
 if (AssessmentDate.IsMoreThan(10).Days.Ago) throw new ValidationException();
 ```
