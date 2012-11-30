@@ -110,6 +110,28 @@ namespace FluentDate.Tests
             Assert.IsTrue(assessmentDate.IsAtLeast(9).Days.After(target), "Assessment Date is 9 days after Today.");
         }
 
+        [TestMethod]
+        public void CalendarUnitTests()
+        {
+            var birthDate = DateTime.Today.AddYears(-18);
+            Assert.IsTrue(birthDate.IsAtLeast(18).Years.Ago);
+            Assert.IsTrue(birthDate.IsMoreThan(100).Months.Ago);
+
+            var partyNextWeek = DateTime.Now.AddDays(3);
+            Assert.IsTrue(partyNextWeek.IsLessThan(1).Weeks.FromNow);
+            Assert.IsFalse(partyNextWeek.IsMoreThan(3).Days.FromNow);
+            Assert.IsTrue(partyNextWeek.IsMoreThan(3).Days.FromToday);
+            Assert.IsTrue(partyNextWeek.IsAtMost(4).Days.FromNow);
+            var someEvent = DateTime.Now.AddMinutes(-6);
+            Assert.IsTrue(someEvent.IsMoreThan(5).Minutes.Ago);
+            Assert.IsTrue(someEvent.IsAtLeast(360).Seconds.Ago,"Seconds atleast");
+            var tomorrow = DateTime.Now.AddDays(1);
+            
+            Assert.IsTrue(tomorrow.IsAtLeast(23).Hours.FromNow,"23 Hours from Now.");
+
+           
+        }
+
         
     }
 }

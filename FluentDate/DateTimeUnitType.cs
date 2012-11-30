@@ -7,13 +7,13 @@ using System.Threading.Tasks;
 namespace FluentDate
 {
     public enum DateTimeUnitType
-    {
-        Year,
-        Month,
-        Week,
-        Day,
-        Hour,
+    {        
+        Second,
         Minute,
-        Second
+        Hour,
+        Day,
+        Week,
+        Month,
+        Year,
     }
 }

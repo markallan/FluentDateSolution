@@ -106,7 +106,7 @@ namespace FluentDate
             {
                 get
                 {
-                    return Before(DateTime.Today);
+                    return Before( _dateTimeUnitType >= DateTimeUnitType.Day? DateTime.Today:DateTime.Now);
                 }
             }
 
